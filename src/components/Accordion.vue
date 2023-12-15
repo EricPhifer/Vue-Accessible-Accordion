@@ -23,27 +23,26 @@
           </summary>
 
           <!-- Accordion Panel Content -->
-          <span class="text-base">
-            <summary><em>Last Updated: An Event | May 27 2023</em></summary>
-          </span>
+                            <span class="text-base">
+                                <p><em>Last Updated: An Event | May 27 2023</em></p>
+                            </span>
+                            <p class="mb-10">
+                                <strong>Current Status: GOOD</strong>
+                            </p>
 
-          <div class="mb-10">
-            <p><strong>Current Status: GOOD</strong></p>
-          </div>
+                            <p class="mb-10">
+                                <strong>Projected Opening: Coming soon | October 24 2023</strong>
+                            </p>
 
-          <div class="mb-10">
-            <p><strong>Projected Opening: Coming soon | October 24 2023</strong></p>
-          </div>
-
-          <a
-            tabindex="0"
-            href="#"
-            target="_self"
-            :title="`Status ${index + 1} Title`"
-            class="button primary inline-block"
-          >
-            Learn More
-          </a>
+                        <a
+                            href="#"
+                            target="_self"
+                            :title="`Status ${index + 1} Title`"
+                        class="button primary inline-block
+"
+                >
+                    Learn More
+            </a>
         </details>
     </li>
 
