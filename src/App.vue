@@ -14,26 +14,6 @@ export default {
   components: {
     Accordion,
   },
-  data: () => ({
-    items: [
-      { slideOut: false },
-      { slideOut: false },
-      { slideOut: false },
-      { slideOut: false },
-      { slideOut: false },
-      { slideOut: false },
-    ],
-  }),
-
-  methods: {
-    toggleData(index) {
-      // Toggle the state of the clicked item
-      this.$set(this.items, index, { ...this.items[index], slideOut: !this.items[index].slideOut });
-    },
-    dynamicTitle(index) {
-      return `Item ${index + 1}`;
-    },
-  },
 };
 </script>
 
