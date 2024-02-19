@@ -1,18 +1,18 @@
 <template>
   <main>
-    <!-- Accordion with details / summary -->
+    <!-- NavMain with details / summary -->
     <ul class="space-y-4">
-      <Accordion />
+      <NavMain />
     </ul>
   </main>
 </template>
 
 <script>
-import Accordion from "./components/Accordion.vue";
+import NavMain from "./components/organisms/NavMain.vue";
 
 export default {
   components: {
-    Accordion,
+    NavMain,
   },
 };
 </script>
