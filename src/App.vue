@@ -1,6 +1,6 @@
 <template>
   <main>
-    <!-- Accordion with details / summary -->
+    <!-- Accordion with details / summary --> 
     <ul class="space-y-4">
       <Accordion />
     </ul>
