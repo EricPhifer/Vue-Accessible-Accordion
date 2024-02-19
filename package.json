@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.3.10",
+    "vue3-click-away": "^1.2.4",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

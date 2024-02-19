@@ -1,18 +1,18 @@
 <template>
   <main>
-    <!-- Accordion with details / summary -->
+    <!-- Modal -->
     <ul class="space-y-4">
-      <Accordion />
+      <ModalMain />
     </ul>
   </main>
 </template>
 
 <script>
-import Accordion from "./components/Accordion.vue";
+import ModalMain from './components/organisms/modals/ModalMain.vue'
 
 export default {
   components: {
-    Accordion,
+    ModalMain,
   },
 };
 </script>
@@ -26,6 +26,8 @@ header {
 ul {
   width: 570px;
 }
+
+
 
 @media (min-width: 1024px) {
   header {
