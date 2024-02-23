@@ -1,5 +1,6 @@
 <template>
-  <main>
+  <Modal :show-modal="showModal"/>
+  <main :aria-hidden="showModal">
     <!-- Accordion with details / summary -->
     <ul class="space-y-4">
       <Accordion />
@@ -8,13 +9,18 @@
 </template>
 
 <script>
-import Accordion from "./components/Accordion.vue";
+  import Accordion from "./components/Accordion.vue";
+  import Modal from "./components/Modal.vue";
 
-export default {
-  components: {
-    Accordion,
-  },
-};
+  export default {
+    components: {
+      Accordion,
+      Modal,
+    },
+    data: () => ({
+      showModal: false,
+    })
+  };
 </script>
 
 
