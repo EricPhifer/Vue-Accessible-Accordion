@@ -1,44 +1,47 @@
 
 <template>
   <!-- keyup.esc allows esc button to close the modal -->
-  <div 
+  <focus-trap 
+    v-model:active="isActive"
     @keyup.esc="closeModal"
-    ref="modalDialog"
-    :class="['backdrop', showModal ? 'opacity-100' : 'opacity-0']"
-  >
-    <dialog 
-      :aria-modal="showModal" 
-      aria-labelledby="modal-headline" 
-      class="modal" 
-      v-if="showModal"
     >
-      <div class="modal-container">
-        <div class="modal-header">
-          <h4 id="modal-headline">Status Updates</h4>
-          <button class="close-button" @click="closeModal" autofocus>
-            <font-awesome-icon class="close-icon" :icon="['fas', 'fa-plus']" />
-          </button>
-        </div>
-        <div class="modal-content">
-          <p>I am the very model of a modern Major General.</p>
-          <ul>
-            <li>
-              <a href="#">An anchorable tag</a>
-            </li>
-            <li>
-              <a href="#">An anchorable tag</a>
-            </li>
-            <li>
-              <a href="#">An anchorable tag</a>
-            </li>
-            <li>
-              <a href="#">An anchorable tag</a>
-            </li>
-          </ul>
-        </div>
-      </div>    
-    </dialog>
-  </div>
+    <div
+    :class="['backdrop', showModal ? 'opacity-100' : 'opacity-0']"
+    @click.self="closeModal"
+  >
+  <modal-dialog 
+  :aria-modal="showModal" 
+  aria-labelledby="modal-headline" 
+  class="modal" 
+  >
+  <div class="modal-container">
+    <div class="modal-header">
+      <h4 id="modal-headline">Status Updates</h4>
+      <button class="close-button" @click="closeModal" autofocus>
+        <font-awesome-icon class="close-icon" :icon="['fas', 'fa-plus']" />
+      </button>
+    </div>
+    <div class="modal-content">
+      <p>I am the very model of a modern Major General.</p>
+      <ul>
+        <li>
+          <a href="#">An anchorable tag</a>
+        </li>
+        <li>
+          <a href="#">An anchorable tag</a>
+        </li>
+        <li>
+          <a href="#">An anchorable tag</a>
+        </li>
+        <li>
+          <a href="#">An anchorable tag</a>
+        </li>
+      </ul>
+    </div>
+  </div>    
+</modal-dialog>
+</div>
+  </focus-trap>
 </template>
 
 <script>
@@ -50,44 +53,15 @@
     },
     mounted() {
       this.showModal = true;
-      this.$refs.modalDialog.focus();
+      // this.$refs.modalDialog.focus();
     },
-    watch: {
-      showModal(newValue) {
-        if (newValue) {
-          this.$refs.modalDialog.focus();
-          document.addEventListener('keydown', this.handleKeyDown); 
-        } else {
-          document.removeEventListener('keydown', this.handleKeyDown); 
-        }
-      }
-    },
-    beforeDestroy() {
-        document.removeEventListener('keydown', this.handleKeyDown); 
-    },
+
+
     methods: {
       closeModal() {
         this.showModal = false;
       },
-      handleKeyDown(event) {
-        const modalDialog = this.$refs.modalDialog;
-        const focusableElements = modalDialog.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        const lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-        if (event.key === 'Tab') {
-          if (event.shiftKey) {
-            if (document.activeElement === focusableElements[0]) {
-              event.preventDefault();
-              lastFocusableElement.focus();
-            }
-          } else {
-            if (document.activeElement === lastFocusableElement) {
-              event.preventDefault();
-              focusableElements[0].focus();
-            }
-          }
-        }
-      }
+    
     }
   }
 </script>
