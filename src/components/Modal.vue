@@ -2,9 +2,10 @@
 <template>
   <!-- keyup.esc allows esc button to close the modal -->
   <div 
+    :class="['backdrop', showModal ? 'opacity-100' : 'opacity-0']"
+    @click.self="closeModal"
     @keyup.esc="closeModal"
     ref="modalDialog"
-    :class="['backdrop', showModal ? 'opacity-100' : 'opacity-0']"
   >
     <dialog 
       :aria-modal="showModal" 

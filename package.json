@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "focus-trap-vue": "^4.0.3",
     "vue": "^3.3.10",
     "vuex": "^4.1.0"
   },
